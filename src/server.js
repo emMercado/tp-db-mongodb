@@ -1,50 +1,31 @@
-import dotenv from 'dotenv';
-dotenv.config();
+/* import dotenv from 'dotenv';
+dotenv.config(); */
 import express from "express";
-/* import dbConfig from './config/db.config'; */
-import { dbUri, mongooseOptions } from './config/db.config';
-/* 
-const dbConfig = require("./config/db.config"); */
-
-//ejemplo import route
-/* import { movieRoute } from './routers/movie.routes.js'; */
+import './util/secrets.js'
+import { personRoute } from './routes/personsRoutes.js'
+import { taskRoute } from './routes/tasksRoutes.js'
 
 const app = express();
-/* const db = require("./app/models"); */
-
-db.mongoose
-    .connect(dbUri, mongooseOptions)
-    .then(() => {
-        console.log("Successfully connect to MongoDB.");
-        initialFunction();
-    })
-    .catch(err => {
-        console.error("Connection error", err);
-        process.exit();
-    });
 
 app.use(express.json());
-
+app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to pilar application." });
+    res.json({ message: "Welcome to person application." });
 });
 
 //Routes
-//A medida que vayamos creando las vamos desbloqueando
-//app.use("/movie/", movieRoute);
-//app.use("/user/", userRoute);
-//app.use("/room/", roomRoute);
+app.use("/person/", personRoute);
+app.use("/task/", taskRoute);
 
 //Welcome
 app.get("/", (req, res) => {
-    res.send("API de personas");
+    res.send("API Persons & tasks");
 });
 
 const PORT = process.env.PORT || 3001;
 // API execution
-app.listen(PORT, /* async */() => {
+app.listen(PORT, () => {
     try {
-        //await db.authenticate();
         console.log(`Server is running on port ${PORT}.`);
     } catch (error) {
         console.error("Fail server run", error);
