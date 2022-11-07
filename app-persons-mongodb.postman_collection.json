@@ -1,0 +1,424 @@
+{
+	"info": {
+		"_postman_id": "cc28a0f0-aab8-4c49-a8e7-e4ecc69b4538",
+		"name": "app-persons-mongodb",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15988200"
+	},
+	"item": [
+		{
+			"name": "Persons",
+			"item": [
+				{
+					"name": "GET-Persons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/person/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"person",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-Person-GetPersonById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/person/63681eec9c779e70320d02f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"person",
+								"63681eec9c779e70320d02f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Person-RegisterPerson Copy",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"facundo\",\r\n    \"lastName\": \"mercado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/person/63681eec9c779e70320d02f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"person",
+								"63681eec9c779e70320d02f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Person-DeletePerson",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/person/63681eec9c779e70320d02f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"person",
+								"63681eec9c779e70320d02f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Person-Register",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"var timestamp = moment().format(\"YYYY-MM-DDThh:mm:ss.SSSZ\");\r",
+									"pm.environment.set(\"timestamp\", timestamp);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"emma\",\r\n    \"lastName\": \"mercado\",\r\n    \"dni\": \"36852852\",\r\n    \"birthDate\": \"{{timestamp}}\",\r\n    \"email\": \"mercado@gmail.com\",\r\n    \"cel\": \"3804212121\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/person/registerPerson",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"person",
+								"registerPerson"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-AssignPersonToTask",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"var timestamp = moment().format(\"YYYY-MM-DDThh:mm:ss.SSSZ\");\r",
+									"pm.environment.set(\"timestamp\", timestamp);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idTask\": \"636845c62ff9b94447eea62f\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/person/assign/636840762611a3b8454d1093",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"person",
+								"assign",
+								"636840762611a3b8454d1093"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "GET-Tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/task/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-Task by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/task/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-Task",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/task/6366bbbebf9d9b4da8078543",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								"6366bbbebf9d9b4da8078543"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-RegisterTask",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"var timestamp = moment().format(\"YYYY-MM-DDThh:mm:ss.SSSZ\");\r",
+									"pm.environment.set(\"timestamp\", timestamp);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Live out all the rest\",\r\n    \"dateClosing\": \"{{timestamp}}\",\r\n    \"dateStarted\": \"{{timestamp}}\",\r\n    \"kind\": \"6366bc07bf9d9b4da8078545\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/task/registerTask",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"task",
+								"registerTask"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-UpdateTask",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const moment = require('moment');\r",
+									"var timestamp = moment().format(\"YYYY-MM-DDThh:mm:ss.SSSZ\");\r",
+									"pm.environment.set(\"timestamp\", timestamp);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\": \"Live out all the rest\",\r\n    \"dateClosing\": \"{{timestamp}}\",\r\n    \"dateStarted\": \"{{timestamp}}\",\r\n    \"kind\": \"6366b7e09028a7bb6e9e0334\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/task/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Kinds",
+			"item": [
+				{
+					"name": "GET-Kind",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/kind/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"kind",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Task-RegisterTask",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"JOBBY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/kind/registerKind",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"kind",
+								"registerKind"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET-Kind by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/task/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"task",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
