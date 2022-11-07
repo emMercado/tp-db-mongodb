@@ -35,12 +35,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/person/63681eec9c779e70320d02f9",
+							"raw": "http://localhost:3000/person/63681eec9c779e70320d02f9",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"person",
 								"63681eec9c779e70320d02f9"
@@ -64,12 +64,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/person/63681eec9c779e70320d02f9",
+							"raw": "http://localhost:3000/person/63681eec9c779e70320d02f9",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"person",
 								"63681eec9c779e70320d02f9"
@@ -118,7 +118,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"emma\",\r\n    \"lastName\": \"mercado\",\r\n    \"dni\": \"36852852\",\r\n    \"birthDate\": \"{{timestamp}}\",\r\n    \"email\": \"mercado@gmail.com\",\r\n    \"cel\": \"3804212121\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Live out all the rest\",\r\n    \"lastName\": \"Linkinpark Rodriguez\",\r\n    \"dni\": \"36852852\",\r\n    \"email\": \"linkin@park.com\",\r\n    \"cel\": \"3804212121\",\r\n    \"birthDate\": \"{{timestamp}}\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -126,12 +126,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/person/registerPerson",
+							"raw": "http://localhost:3000/person/registerPerson",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"person",
 								"registerPerson"
@@ -194,12 +194,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/task/",
+							"raw": "http://localhost:3000/task/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"task",
 								""
@@ -214,22 +214,22 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/task/",
+							"raw": "http://localhost:3000/task/id",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"task",
-								""
+								"id"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "DELETE-Task",
+					"name": "DELETE-Task Copy",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -268,7 +268,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"description\": \"Live out all the rest\",\r\n    \"dateClosing\": \"{{timestamp}}\",\r\n    \"dateStarted\": \"{{timestamp}}\",\r\n    \"kind\": \"6366bc07bf9d9b4da8078545\"\r\n}",
+							"raw": "{\r\n    \"description\": \"In the end\",\r\n    \"dateClosing\": \"{{timestamp}}\",\r\n    \"dateStarted\": \"{{timestamp}}\",\r\n    \"kind\": \"6366bc07bf9d9b4da8078545\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -276,12 +276,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/task/registerTask",
+							"raw": "http://localhost:3000/task/registerTask",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"task",
 								"registerTask"
@@ -318,12 +318,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3001/task/",
+							"raw": "http://localhost:3000/task/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"task",
 								""
@@ -343,12 +343,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3001/kind/",
+							"raw": "http://localhost:3000/kind/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "3001",
+							"port": "3000",
 							"path": [
 								"kind",
 								""
@@ -376,7 +376,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"JOBBY\"\r\n}",
+							"raw": "{\r\n    \"name\": \"FAMILY\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
