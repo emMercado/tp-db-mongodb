@@ -1,10 +1,11 @@
-import { Schema, model } from 'mongoose'
+import mongoose, { Schema, model } from "mongoose";
 
 const taskSchema = new Schema({
-    title: { type: String, required: false },
-    description: { type: String, required: false },
-    available: {type: Boolean, required: false},
-    complete: {type: Boolean, required: false}
-})
+  description: { type: String, required: false },
+  dateClosing: { type: Date, required: false },
+  dateStarted: { type: Date, required: false },
+  kind: { type: mongoose.Schema.Types.ObjectId, ref: "Kind" },
+  dniPerson: { type: String,  required: false},
+});
 
 export default model("Task", taskSchema);

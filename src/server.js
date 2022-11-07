@@ -1,14 +1,14 @@
-/* import dotenv from 'dotenv';
-dotenv.config(); */
+import dotenv from 'dotenv';
+dotenv.config();
 import express from "express";
 import './util/secrets.js'
 import { personRoute } from './routes/personsRoutes.js'
 import { taskRoute } from './routes/tasksRoutes.js'
+import { kindRoute } from "./routes/kindRoutes.js";
 
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.get("/", (req, res) => {
     res.json({ message: "Welcome to person application." });
 });
@@ -16,10 +16,11 @@ app.get("/", (req, res) => {
 //Routes
 app.use("/person/", personRoute);
 app.use("/task/", taskRoute);
+app.use("/kind/", kindRoute);
 
 //Welcome
 app.get("/", (req, res) => {
-    res.send("API Persons & tasks");
+    res.send("API Persons & kinds");
 });
 
 const PORT = process.env.PORT || 3001;
